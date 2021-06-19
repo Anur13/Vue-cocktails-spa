@@ -1,13 +1,17 @@
 # vue-cocktails-spa
+Pet project for Vue.js practice. Uses json-server.
 
+##Json server start
+
+npm run server
 ## Project setup
 ```
-yarn install
+npm install
 ```
 
 ### Compiles and hot-reloads for development
 ```
-yarn serve
+npm run serve
 ```
 
 ### Compiles and minifies for production
@@ -15,10 +19,3 @@ yarn serve
 yarn build
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
