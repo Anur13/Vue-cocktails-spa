@@ -1,22 +1,30 @@
 <template>
   <div>
     <ul>
-      <li  @click="getCocktails(ing.name)" v-for="ing in favIngredients" :key="ing.name">
+      <li @click="getCocktails(ing.name)" v-for="ing in favIngredients.favIngredients" :key="ing.name">
         <span class="ingredients">{{ ing.name }}</span>
       </li>
     </ul>
-    <ul class="cocktails">
+    <DrinksList path="FavIngredients" :cocktails="cocktails" />
+    <!-- <ul class="cocktails">
       <li v-for="item in cocktails" :key="item.strDrink">
         <p>{{ item.strDrink }}</p>
         <img :src="item.strDrinkThumb" alt="" />
       </li>
-    </ul>
+    </ul> -->
+    <Modal v-if="modalOpen">
+      <DrinkDetails :drink="currentDrink" />
+    </Modal>
   </div>
 </template>
 <script>
 import utils from '../utils/api'
 import { mapState } from 'vuex'
+import DrinksList from '@/components/Drinks/DrinksList'
+import DrinkDetails from '@/components/Drinks/DrinkDetails'
+import Modal from '@/components/Modal/Modal'
 export default {
+  components: { DrinksList,Modal,DrinkDetails },
   data() {
     return {
       cocktails: []
@@ -30,7 +38,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['favIngredients'])
+    ...mapState(['favIngredients', 'currentDrink','modalOpen'])
   }
 }
 </script>

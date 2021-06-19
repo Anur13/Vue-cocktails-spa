@@ -18,14 +18,15 @@ export default {
     ...mapState(['modalOpen'])
   },
   methods: {
-    ...mapActions(['getFavoriteDrinks','getFavIngredients']  )
+    ...mapActions({
+      getFavoriteDrinks: 'favDrinks/getFavoriteDrinks',
+      getFavIngredients: 'favIngredients/getFavIngredients',
+    })
   },
   created() {
     this.getFavoriteDrinks()
     this.getFavIngredients()
-  },
-
-
+  }
 }
 </script>
 

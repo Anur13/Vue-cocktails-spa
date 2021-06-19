@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     checkFavIngr(ingr) {
-      const present = this.favIngredients.find(item => item.name === ingr)
+      const present = this.favIngredients.favIngredients.find(item => item.name === ingr)
       if (present) return 'add'
       return
     },
@@ -47,7 +47,7 @@ export default {
       this.changeFavIngredients({ name: ingredient })
     },
 
-    ...mapActions(['changeFavDrinks', 'changeFavIngredients'])
+    ...mapActions({changeFavDrinks: 'favDrinks/changeFavDrinks', changeFavIngredients: 'favIngredients/changeFavIngredients'})
   },
   computed: {
     getVideoUrl() {
@@ -75,7 +75,7 @@ export default {
     },
 
     checkDrinkFav() {
-      const check = this.favDrinks.find(item => item.idDrink === this.drink.idDrink)
+      const check = this.favDrinks.favDrinks.find(item => item.idDrink === this.drink.idDrink)
       if (check) return true
       return false
     },

@@ -40,6 +40,11 @@ const routes = [
     component: FavIngredients
   },
   {
+    path: '/cocktails/ingredients/:id',
+    name: 'FavIngredients',
+    component: FavIngredients
+  },
+  {
     path: '/',
     name: 'Home',
     component: Home

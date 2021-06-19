@@ -1,8 +1,8 @@
 <template>
   <div>
-    <DrinksList path='cocktailDetails' :cocktails="cocktails" />
+    <DrinksList path="cocktailDetails" :cocktails="getList" />
     <Modal v-if="modalOpen">
-      <DrinkDetails :drink='currentDrink' />
+      <DrinkDetails :drink="currentDrink" />
     </Modal>
   </div>
 </template>
@@ -27,11 +27,15 @@ export default {
     this.cocktails = this.cocktails.concat(cocktails)
   },
   computed: {
-    ...mapState(['modalOpen', 'currentDrink'])
+    getList() {
+      if (this.drinksByCateg.drinksByCateg.length > 0) {
+        return this.drinksByCateg.drinksByCateg
+      }
+      return this.cocktails
+    },
+    ...mapState(['modalOpen', 'currentDrink', 'drinksByCateg'])
   }
 }
 </script>
 
-<style lang="css" scoped>
-
-</style>
+<style lang="css" scoped></style>

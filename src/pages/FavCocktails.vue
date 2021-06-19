@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Your Favorite cocktails</h2>
-    <DrinksList path="FavCocktails" :cocktails="favDrinks" />
+    <DrinksList path="FavCocktails" :cocktails="favDrinks.favDrinks" />
 
     <Modal v-if="modalOpen">
       <DrinkDetails :drink="currentDrink" />

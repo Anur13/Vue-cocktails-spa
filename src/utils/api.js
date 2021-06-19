@@ -50,6 +50,10 @@ async function getCocktailsByIngredients(ingredient) {
   const data = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`)
   return data.data
 }
+
+
+
+
 export default {
   getRandomCocktails,
   getcocktailDetails,
