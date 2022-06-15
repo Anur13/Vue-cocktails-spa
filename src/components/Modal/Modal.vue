@@ -34,11 +34,11 @@ export default {
   position: absolute;
   z-index: 20;
   text-align: center;
-  padding: 40px 39px 40px 41px;
+  padding: 20px 39px 20px 41px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  border-radius: 8px;
   background-color: #ffffff;
 }
 </style>

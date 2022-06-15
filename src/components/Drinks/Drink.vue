@@ -36,11 +36,18 @@ export default {
 <style lang="css" scoped>
 img {
   display: block;
-  height: auto;
+  height: 100%;
   max-width: 100%;
+  border-radius: 50%;
+  margin-right: auto;
+  margin-left: auto;
 }
 li {
-  margin-top: 20px;
-  width: calc((100% - 20px) / 6);
+  margin-top: 80px;
+  width: calc((100% - 20px) / 3);
+  height: 40vh;
+}
+li:nth-last-child(n+4){
+  margin-top: 0;
 }
 </style>

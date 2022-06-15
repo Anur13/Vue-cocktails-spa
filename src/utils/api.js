@@ -2,7 +2,7 @@ import axios from 'axios'
 import { nanoid } from 'nanoid'
 async function getRandomCocktails() {
   let cocktails = []
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 6; i++) {
     let cocktail = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php').then(data => data.data)
     cocktails = cocktails.concat(cocktail.drinks)
   }

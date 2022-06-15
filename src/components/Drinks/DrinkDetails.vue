@@ -1,14 +1,14 @@
 <template>
   <article>
-    <h3>{{ drink.strDrink }}</h3>
+    <h3 class="modal-header">{{ drink.strDrink }}</h3>
     <img v-if="!checkDrinkFav" @click="changeFav" class="fav" src="../../assets/beer-black.svg" alt="" />
     <img v-else @click="changeFav" class="fav" src="../../assets/beer-red.svg" alt="" />
 
-    <div>
+    <div class="modal-data">
       <img :src="drink.strDrinkThumb" alt="" />
       <ul class="description-list">
-        <li><b>Category:</b> {{ drink.strCategory }}</li>
-        <li><b>Glass:</b> {{ drink.strGlass }}</li>
+        <li class="modal-data-item"><b>Category:</b> {{ drink.strCategory }}</li>
+        <li class="modal-data-item"><b>Glass:</b> {{ drink.strGlass }}</li>
         <b>Ingredients:</b>
         <ul class="ingredients-list">
           <li v-for="item in getIngredientsAndQuantity" :key="item[0]">
@@ -19,7 +19,7 @@
             </div>
           </li>
         </ul>
-        <li><b>Instructions</b>: {{ drink.strInstructions }}</li>
+        <li class="modal-data-item"><b>Instructions</b>: {{ drink.strInstructions }}</li>
       </ul>
     </div>
     <iframe v-if="drink.strVideo" width="420" height="315" :src="getVideoUrl"> </iframe>
@@ -38,7 +38,6 @@ export default {
     checkFavIngr(ingr) {
       const present = this.favIngredients.favIngredients.find(item => item.name === ingr)
       if (present) return 'add'
-      return
     },
     changeFav() {
       this.changeFavDrinks(this.drink)
@@ -89,6 +88,7 @@ img {
   display: block;
   height: auto;
   max-width: 50%;
+  border-radius: 10px;
 }
 div {
   display: flex;
@@ -120,5 +120,12 @@ div {
 .ingredient {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+.modal-header {
+  margin: 0;
+}
+.modal-data .modal-data-item{
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 </style>

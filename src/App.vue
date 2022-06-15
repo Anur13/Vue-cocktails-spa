@@ -1,14 +1,15 @@
 <template>
   <div id="app">
-    <Header />
+    <Header/>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import {mapState, mapActions} from 'vuex'
 
 import Header from '@/components/Header'
+
 export default {
   name: 'App',
   components: {
@@ -37,6 +38,19 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: #DBCBD8;
+  height: 100%;
+  padding: 20px;
+  padding-bottom: 60px;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #101935;
 }
 </style>
